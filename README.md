@@ -20,24 +20,23 @@ This project demonstrates the usage of **Spring Boot** with **Spring Data JPA** 
 ## 📂 Project Structure
 src/
 └── main/
-    ├── java/
-    │   └── com/
-    │       └── nt/
-    │           ├── SpringbootdatajpaREPOSITORY.java         # Main Spring Boot application starter class
-    │           ├── Entity/                                  # Contains JPA entities (database table mappings)
-    │           │   └── CoronaVaccine.java                   # Entity class representing the Corona Vaccine table
-    │           ├── ropo/                                    # Repository layer for database operations
-    │           │   └── ICoronaVaccineRepo.java               # JPA Repository interface for CRUD operations
-    │           ├── Runners/                                 # CommandLineRunner classes for executing test logic at startup
-    │           │   └── CrudRepoTestRunner.java              # Runner class for testing CRUD repository methods
-    │           └── Service/                                 # Service layer for business logic
-    │               ├── CoronaVaccineMangServiceImpl.java    # Implementation of the service interface
-    │               └── ICoronaVaccineManagementService.java # Service interface for Corona Vaccine management
-    └── resources/
-        └── application.properties                           # Application configuration file (DB connection, JPA settings, etc.)
-
+└── java/
+└── com/
+└── nt/
+├── SpringbootdatajpaREPOSITORY.java # Main Spring Boot application starter class
+├── Entity/ # Contains JPA entities (database table mappings)
+│ └── CoronaVaccine.java # Entity class representing the Corona Vaccine table
+├── repo/ # Repository layer for database operations
+│ └── ICoronaVaccineRepo.java # JPA Repository interface for CRUD operations
+├── Runners/ # CommandLineRunner classes for executing test logic at startup
+│ └── CrudRepoTestRunner.java # Runner class for testing CRUD repository methods
+├── Service/ # Service layer for business logic
+│ ├── CoronaVaccineMangServiceImpl.java # Implementation of the service interface
+│ └── ICoronaVaccineManagementService.java # Service interface for Corona Vaccine management
+└── resources/
+└── application.properties # Application configuration file
 test/
-└── (Unit tests if any)                                       # Test cases for the project
+└── (Unit tests if any) # Test cases for the project
 
 
 ## ⚡ Configuration
