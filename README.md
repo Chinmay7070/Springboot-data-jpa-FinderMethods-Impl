@@ -46,7 +46,7 @@ spring.application.name=Springboot-datajpa-pro1
 spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
 spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
 spring.datasource.username=system
-spring.datasource.password=Chinmay
+spring.datasource.password=your_passowrd
 spring.jpa.properties.hibernate.enable_lazy_load_no_trans=true
 spring.jpa.database-platform=org.hibernate.dialect.Oracle10gDialect
 spring.jpa.show-sql=true
@@ -61,4 +61,3 @@ spring.jpa.hibernate.ddl-auto=update
    mvn clean install
 5. Run the application  
    mvn spring-boot:run
-6. The application will start at http://localhost:8080.
