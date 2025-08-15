@@ -76,3 +76,14 @@ spring.jpa.hibernate.ddl-auto=update
    mvn clean install
 5. Run the application  
    mvn spring-boot:run
+
+
+## 🎓 What I Learn
+- How to use **Spring Boot** with **Spring Data JPA** for database operations.  
+- Implementing **Finder Methods** (query methods) without writing explicit SQL.  
+- Performing **CRUD operations** using JPA repositories.  
+- Connecting and configuring **Oracle Database** with Spring Boot.  
+- Using **Hibernate ORM** for automatic table creation and updates.  
+- Configuring **application properties** for database and JPA behavior.  
+- Understanding **lazy loading** and SQL logging in Spring Boot.  
+
