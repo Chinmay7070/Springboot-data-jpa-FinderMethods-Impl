@@ -17,39 +17,55 @@ This project demonstrates the usage of **Spring Boot** with **Spring Data JPA** 
 - **Oracle Database XE**
 - **Maven**
 
-## 📂 Project Structure
-src/
-└── main/
-└── java/
-└── com/
-└── nt/
-├── SpringbootdatajpaREPOSITORY.java # Main Spring Boot application starter class
-├── Entity/ # Contains JPA entities (database table mappings)
-│ └── CoronaVaccine.java # Entity class representing the Corona Vaccine table
-├── repo/ # Repository layer for database operations
-│ └── ICoronaVaccineRepo.java # JPA Repository interface for CRUD operations
-├── Runners/ # CommandLineRunner classes for executing test logic at startup
-│ └── CrudRepoTestRunner.java # Runner class for testing CRUD repository methods
-├── Service/ # Service layer for business logic
-│ ├── CoronaVaccineMangServiceImpl.java # Implementation of the service interface
-│ └── ICoronaVaccineManagementService.java # Service interface for Corona Vaccine management
-└── resources/
-└── application.properties # Application configuration file
-test/
-└── (Unit tests if any) # Test cases for the project
 
+## 📂 Project Structure
+
+```plaintext
+src/
+ └── main/
+     ├── java/
+     │   └── com/
+     │       └── nt/
+     │           ├── SpringbootdatajpaREPOSITORY.java
+     │           ├── Entity/
+     │           │   └── CoronaVaccine.java
+     │           ├── ropo/
+     │           │   └── ICoronaVaccineRepo.java
+     │           ├── Runners/
+     │           │   └── CrudRepoTestRunner.java
+     │           └── Service/
+     │               ├── CoronaVaccineMangServiceImpl.java
+     │               └── ICoronaVaccineManagementService.java
+     └── resources/
+         └── application.properties
 
 ## ⚡ Configuration
 Set up your database connection in `application.properties`:
-spring.application.name=Springboot-datajpa-pro1
+# --- Database Connection Properties ---
+# Specifies the JDBC driver class for Oracle.
 spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
-spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+
+# Configures the connection URL for the Oracle database.
+# This URL points to the 'xe' SID on the local machine at port 1521.
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:orcl
+
+# Sets the database username.
 spring.datasource.username=system
-spring.datasource.password=your_passowrd
-spring.jpa.properties.hibernate.enable_lazy_load_no_trans=true
-spring.jpa.database-platform=org.hibernate.dialect.Oracle10gDialect
+
+# Sets the password for the database user.
+spring.datasource.password=Chinmay
+
+# --- JPA and Hibernate Properties ---
+# Specifies the Hibernate dialect for Oracle, which helps Hibernate generate Oracle-specific SQL.
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.OracleDialect
+
+# When set to true, this logs all SQL queries to the console for debugging.
 spring.jpa.show-sql=true
+
+# Configures Hibernate to automatically update the database schema based on your entities.
+# The `update` value adds or modifies tables and columns but doesn't drop them.
 spring.jpa.hibernate.ddl-auto=update
+
 
 ## 🚀 How to Run
 1. Clone the repository  
