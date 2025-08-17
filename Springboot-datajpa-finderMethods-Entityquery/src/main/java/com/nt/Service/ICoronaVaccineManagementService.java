@@ -3,6 +3,7 @@ package com.nt.Service;
 import java.util.List;
 
 import com.nt.Entity.CoronaVaccine;
+import com.nt.Type.View;
 
 public interface ICoronaVaccineManagementService {
     
@@ -17,5 +18,7 @@ public interface ICoronaVaccineManagementService {
 	public List<CoronaVaccine> searchVaccinesNotInCountries(List<String> countriesl);
 	public List<CoronaVaccine>  searchVaccinesByPricebyAsc(double startPrice);
 	
+	//================**DYNAMIC PROJECTION**=========================
 	
+	public <T extends View> List<T> searchVaccineByCompany(String comp,Class<T> clazz);
 }

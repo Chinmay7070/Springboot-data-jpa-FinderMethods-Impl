@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.nt.Entity.CoronaVaccine;
+import com.nt.Type.View;
 import com.nt.ropo.ICaronaVaccineRepo;
 
 public class CoronaVaccineMangServiceImpl implements ICoronaVaccineManagementService {
@@ -65,6 +66,13 @@ public class CoronaVaccineMangServiceImpl implements ICoronaVaccineManagementSer
 	public List<CoronaVaccine> searchVaccinesByPricebyAsc(double startPrice) {
 	
 	  return coronarepo.findByPriceGreaterthanOrderByPriceAsc(startPrice);
+	}
+	
+	//=====================**DYNAMIC PROJECTIO***=========================
+	
+	@Override
+	public <T extends View> List<T> searchVaccineByCompany(String comp, Class<T> clazz) {
+		return coronarepo.findByCompanyOredByCompanyDesc(comp, clazz);
 	}
 
 	

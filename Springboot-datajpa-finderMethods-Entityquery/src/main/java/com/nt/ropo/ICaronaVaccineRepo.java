@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.nt.Entity.CoronaVaccine;
+import com.nt.Type.View;
 
 public interface ICaronaVaccineRepo extends JpaRepository<CoronaVaccine, Long> {
 
@@ -25,6 +26,9 @@ public interface ICaronaVaccineRepo extends JpaRepository<CoronaVaccine, Long> {
 	   public List<CoronaVaccine> findByCountryIn(List<String> country);
 	   public List<CoronaVaccine> findByCountryNotIn(List<String> countries);
 	   public List<CoronaVaccine> findByPriceGreaterthanOrderByPriceAsc(double setPrice);
+	     
+	   //=====================**DYNAMIC PROJECTION**=======================================
 	   
+	   public <T extends View> List<T> findByCompanyOredByCompanyDesc(String cop,Class<T> clazz);
 	   
 }
