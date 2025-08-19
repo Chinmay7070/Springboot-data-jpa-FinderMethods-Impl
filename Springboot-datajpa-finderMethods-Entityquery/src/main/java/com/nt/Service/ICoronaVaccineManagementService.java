@@ -21,4 +21,13 @@ public interface ICoronaVaccineManagementService {
 	//================**DYNAMIC PROJECTION**=========================
 	
 	public <T extends View> List<T> searchVaccineByCompany(String comp,Class<T> clazz);
+	
+	//=========================**** @Query methods*****+++++++++++++
+    public List<CoronaVaccine> fetchVaccineByComp(String comp);
+	
+	public List<CoronaVaccine> fetchVaccineBypriceRange1(double min,double max);
+	
+	public List<CoronaVaccine> fetchVaccineByCompanies(String com1,String com2,String com3);
+	
+	public List<String> fetchVaccineNamesByPriceRange(double min,double max);
 }

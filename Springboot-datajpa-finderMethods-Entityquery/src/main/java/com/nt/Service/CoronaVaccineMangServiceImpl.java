@@ -74,6 +74,28 @@ public class CoronaVaccineMangServiceImpl implements ICoronaVaccineManagementSer
 	public <T extends View> List<T> searchVaccineByCompany(String comp, Class<T> clazz) {
 		return coronarepo.findByCompanyOredByCompanyDesc(comp, clazz);
 	}
+	
+	
+	public List<CoronaVaccine> fetchVaccineByComp(String comp) {
+		return coronarepo.searchVaccineByCompeny(comp);
+	}
+
+	@Override
+	public List<CoronaVaccine> fetchVaccineBypriceRange1(double min, double max) {
+		
+		return coronarepo.searchVaccineBypricerange(min, max);
+	}
+
+	@Override
+	public List<CoronaVaccine> fetchVaccineByCompanies(String com1, String com2, String com3) {
+		return coronarepo.searchVaccinesByComp(com1, com2, com3);
+	}
+
+	@Override
+	public List<String> fetchVaccineNamesByPriceRange(double min, double max) {
+		return coronarepo.searchVaccineNamesByPriceRange(min, max);
+	}
+
 
 	
 
